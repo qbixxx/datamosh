@@ -25,11 +25,11 @@ Believe it or not, this masterpiece has dependencies:
 
 - `ffmpeg` (for video manipulation)
 - `bc` (for math, because apparently computers need help with that)
-- A sense of adventure (not available via apt-get)
+- A sense of adventure (not available via apt)
 
 ```bash
 # Install dependencies
-sudo apt-get install ffmpeg bc
+sudo apt install ffmpeg bc
 
 # Clone this repository
 git clone https://github.com/qbixxx/datamosh.git
