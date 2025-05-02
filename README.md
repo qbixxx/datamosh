@@ -94,8 +94,7 @@ We have expertly crafted profiles that were definitely not created by randomly t
 Is this the most efficient way to do it? Absolutely not. Is it the most fun way? Debatable. Does it work? Sometimes! 
 
 ## Demo
-https://github.com/user-attachments/assets/34ff2493-9be2-4b2c-85d0-51f2e39c6df6
-
+https://github.com/user-attachments/assets/9058e940-7ae0-4e25-9e86-bc477d0b8115
 ## Troubleshooting
 
 **Q: It doesn't work!**  
