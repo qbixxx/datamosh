@@ -151,12 +151,10 @@ process_video_pair() {
     
     # Convert to AVI with Xvid codec - with progress feedback
     log_info "Converting video 1 to AVI format..."
-    ffmpeg -nostdin -y -i "$input1" -vf "scale=$RESOLUTION" -c:v libxvid -q:v $Q_VAL -g 300 -an "$WORKING_DIR/video1.avi" > /dev/null 2>> "$LOG_FILE"
-    echo ""  # Ensure new line after ffmpeg
+    ffmpeg -y -nostdin -i "$input1" -vf "scale=$RESOLUTION" -c:v libxvid -q:v $Q_VAL -g 300 -an "$WORKING_DIR/video1.avi" </dev/null >/dev/null 2>> "$LOG_FILE"
     
     log_info "Converting video 2 to AVI format..."
-    ffmpeg -nostdin -y -i "$input2" -vf "scale=$RESOLUTION" -c:v libxvid -q:v $Q_VAL -g 300 -an "$WORKING_DIR/video2.avi" > /dev/null 2>> "$LOG_FILE"
-    echo ""  # Ensure new line after ffmpeg
+    ffmpeg -y -nostdin -i "$input2" -vf "scale=$RESOLUTION" -c:v libxvid -q:v $Q_VAL -g 300 -an "$WORKING_DIR/video2.avi" </dev/null >/dev/null 2>> "$LOG_FILE"
     
     # Get file sizes
     SIZE1=$(stat -c%s "$WORKING_DIR/video1.avi")
@@ -194,8 +192,7 @@ process_video_pair() {
     done
     
     log_info "Encoding final output..."
-    ffmpeg -nostdin -y -i "$WORKING_DIR/datamosh.avi" -c:v libx264 -pix_fmt yuv420p -crf 18 -preset fast "$output" > /dev/null 2>> "$LOG_FILE"
-    echo ""  # Ensure new line after ffmpeg
+    ffmpeg -y -nostdin -i "$WORKING_DIR/datamosh.avi" -c:v libx264 -pix_fmt yuv420p -crf 18 -preset fast "$output" </dev/null >/dev/null 2>> "$LOG_FILE"
     
     # Check result and create GIF if requested
     if [ -f "$output" ] && [ $(stat -c%s "$output") -gt 0 ]; then
@@ -217,11 +214,11 @@ create_gif() {
     log_info "Creating GIF ($GIF_DURATION s at $GIF_FPS fps)"
     
     # Create a palette for better quality
-    ffmpeg -i "$input_file" -vf "fps=$GIF_FPS,scale=480:-1:flags=lanczos,palettegen" "$WORKING_DIR/palette.png" 2>> "$LOG_FILE"
+    ffmpeg -y -nostdin -i "$input_file" -vf "fps=$GIF_FPS,scale=480:-1:flags=lanczos,palettegen" "$WORKING_DIR/palette.png" </dev/null >/dev/null 2>> "$LOG_FILE"
     
     # Create the GIF using the palette
-    ffmpeg -i "$input_file" -i "$WORKING_DIR/palette.png" -ss 0 -t "$GIF_DURATION" \
-        -filter_complex "fps=$GIF_FPS,scale=480:-1:flags=lanczos[x];[x][1:v]paletteuse" "$output_file" 2>> "$LOG_FILE"
+    ffmpeg -y -nostdin -i "$input_file" -i "$WORKING_DIR/palette.png" -ss 0 -t "$GIF_DURATION" \
+        -filter_complex "fps=$GIF_FPS,scale=480:-1:flags=lanczos[x];[x][1:v]paletteuse" "$output_file" </dev/null >/dev/null 2>> "$LOG_FILE"
     
     if [ $? -eq 0 ]; then
         log_success "GIF created: $output_file"
