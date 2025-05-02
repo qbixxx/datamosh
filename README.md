@@ -25,11 +25,11 @@ Believe it or not, this masterpiece has dependencies:
 
 - `ffmpeg` (for video manipulation)
 - `bc` (for math, because apparently computers need help with that)
-- A sense of adventure (not available via apt-get)
+- A sense of adventure (not available via apt)
 
 ```bash
 # Install dependencies
-sudo apt-get install ffmpeg bc
+sudo apt install ffmpeg bc
 
 # Clone this repository
 git clone https://github.com/qbixxx/datamosh.git
@@ -94,8 +94,7 @@ We have expertly crafted profiles that were definitely not created by randomly t
 Is this the most efficient way to do it? Absolutely not. Is it the most fun way? Debatable. Does it work? Sometimes! 
 
 ## Demo
-https://github.com/user-attachments/assets/34ff2493-9be2-4b2c-85d0-51f2e39c6df6
-
+https://github.com/user-attachments/assets/9058e940-7ae0-4e25-9e86-bc477d0b8115
 ## Troubleshooting
 
 **Q: It doesn't work!**  
