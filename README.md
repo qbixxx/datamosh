@@ -75,7 +75,7 @@ This will create a datamoshed video with a timestamped filename like `datamoshed
 
 ## Available Profiles
 
-We have expertly crafted profiles that were definitely not created by randomly tweaking parameters:
+I have expertly crafted profiles that were definitely not created by randomly tweaking parameters:
 
 - `glitch`: Light static-like artifacts. The "I just want a little chaos" option.
 - `bloom`: Blooming color effects. Colors have a mind of their own.
