@@ -93,7 +93,7 @@ I have expertly crafted profiles that were definitely not created by randomly tw
 
 Is this the most efficient way to do it? Absolutely not. Is it the most fun way? Debatable. Does it work? Sometimes! 
 
-## Demo
+## Demo (Video playback on browser not guaranteed)
 https://github.com/user-attachments/assets/9058e940-7ae0-4e25-9e86-bc477d0b8115
 ## Troubleshooting
 
