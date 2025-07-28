@@ -6,7 +6,7 @@
 
 A command-line tool for creating **datamosh** effects between video files, because who needs coherent frames anyway?
 
-## What the heck is this?
+## What is this?
 
 This is a bash script that deliberately corrupts video files to create that oh-so-trendy glitch aesthetic where colors bleed, shapes distort, and pixels have identity crises. Some call it "datamoshing," others call it "compression artifact art".
 
